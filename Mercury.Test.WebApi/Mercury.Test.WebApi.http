@@ -1,0 +1,6 @@
+@Mercury.Test.WebApi_HostAddress = http://localhost:5278
+
+GET {{Mercury.Test.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
