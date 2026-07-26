@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Mercury.Test.WebApi/Mercury.Test.WebApi.csproj" />
+  <Project Path="TestProject1/Mercury.Test.NUnit.csproj" />
 </Solution>
