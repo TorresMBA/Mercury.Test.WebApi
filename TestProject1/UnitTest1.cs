@@ -24,7 +24,7 @@ namespace Mercury.Test.WebApi.Tests.Controllers {
             var result = _controller.Get();
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Count(), Is.EqualTo(5));
+            Assert.That(result.Count(), Is.EqualTo(10));
         }
 
         [Test]
@@ -68,12 +68,12 @@ namespace Mercury.Test.WebApi.Tests.Controllers {
         public void Get_MultipleCallsProduceIndependentResults()
         {
             // No garantiza valores distintos (por el rango de Random),
-            // pero valida que cada llamada genera una nueva colección de 5 elementos
+            // pero valida que cada llamada genera una nueva colección de 10 elementos
             var result1 = _controller.Get().ToArray();
             var result2 = _controller.Get().ToArray();
 
-            Assert.That(result1.Length, Is.EqualTo(5));
-            Assert.That(result2.Length, Is.EqualTo(5));
+            Assert.That(result1.Length, Is.EqualTo(10));
+            Assert.That(result2.Length, Is.EqualTo(10));
         }
     }
 }
