@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Mercury.Test.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81a9cc562ec3e42d1d5e5e48f6979d9a41f35656")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48f817e645c279f95deb283116a5a91a90f45299")]
 [assembly: System.Reflection.AssemblyProductAttribute("Mercury.Test.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Mercury.Test.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
