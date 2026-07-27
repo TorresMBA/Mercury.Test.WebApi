@@ -27,7 +27,24 @@ pipeline {
                 bat 'dotnet test'
             }
         }
+		
+		stage('Publish') {
+            steps {
+                bat 'dotnet publish -c Release -o publish'
+            }
+        }
 
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'publish/**'
+            }
+        }
+		
+		stage('Deploy DEV') {
+			steps {
+				bat '''xcopy publish C:\\inetpub\\wwwroot\\Deploy\\Mercury /E /Y '''
+			}
+		}
     }
 
 }
