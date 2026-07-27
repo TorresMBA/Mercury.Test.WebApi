@@ -1,25 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wfv1TxFfTa8=",
+  "dgSpecHash": "xalG5qNYdkI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Brian\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.10\\microsoft.aspnetcore.openapi.10.0.10.nupkg.sha512",
-    "C:\\Users\\Brian\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\Brian\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",
     "C:\\Users\\Brian\\.nuget\\packages\\scalar.aspnetcore\\2.16.16\\scalar.aspnetcore.2.16.16.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "El paquete \"Microsoft.OpenApi\" 2.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
-      "libraryId": "Microsoft.OpenApi",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }
