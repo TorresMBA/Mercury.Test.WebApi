@@ -41,14 +41,15 @@ pipeline {
         }
 		
 		stage('Deploy') {
-			bat '''
-			    %windir%\\System32\\inetsrv\\appcmd stop apppool /apppool.name:"MiApiPool"
-			
-			    xcopy publish C:\\inetpub\\wwwroot\\Deploy\\Mercury\\ /E /Y /I
-			
-			    %windir%\\System32\\inetsrv\\appcmd start apppool /apppool.name:"MiApiPool"
-			    '''
+			setps{
+				bat '''
+				    %windir%\\System32\\inetsrv\\appcmd stop apppool /apppool.name:"MiApiPool"
+				
+				    xcopy publish C:\\inetpub\\wwwroot\\Deploy\\Mercury\\ /E /Y /I
+				
+				    %windir%\\System32\\inetsrv\\appcmd start apppool /apppool.name:"MiApiPool"
+				    '''
+			}
 		}
     }
-
 }
