@@ -42,7 +42,7 @@ pipeline {
 		
 		stage('Deploy DEV') {
 			steps {
-				bat '''xcopy publish C:\\inetpub\\wwwroot\\Deploy\\Mercury /E /Y '''
+				bat '''xcopy publish C:\inetpub\wwwroot\Deploy\Mercury\ /E /Y /I'''
 			}
 		}
     }
