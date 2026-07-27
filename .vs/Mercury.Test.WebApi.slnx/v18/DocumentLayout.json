@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|c:\\users\\brian\\source\\repos\\testdeploypipeline\\mercury.test.webapi\\mercury.test.webapi\\mercury.test.webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|solutionrelative:mercury.test.webapi\\mercury.test.webapi.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED44C393-773F-8B11-BFD3-F76AFC430596}|TestProject1\\Mercury.Test.NUnit.csproj|c:\\users\\brian\\source\\repos\\testdeploypipeline\\mercury.test.webapi\\testproject1\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED44C393-773F-8B11-BFD3-F76AFC430596}|TestProject1\\Mercury.Test.NUnit.csproj|solutionrelative:testproject1\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|c:\\users\\brian\\source\\repos\\testdeploypipeline\\mercury.test.webapi\\mercury.test.webapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|solutionrelative:mercury.test.webapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|c:\\users\\brian\\source\\repos\\testdeploypipeline\\mercury.test.webapi\\mercury.test.webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|solutionrelative:mercury.test.webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|c:\\users\\brian\\source\\repos\\testdeploypipeline\\mercury.test.webapi\\mercury.test.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB1C0680-54E6-4C7F-4946-B6C04C957842}|Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj|solutionrelative:mercury.test.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +35,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Mercury.Test.WebApi",
+              "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
+              "RelativeDocumentMoniker": "Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
+              "ToolTip": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
+              "RelativeToolTip": "Mercury.Test.WebApi\\Mercury.Test.WebApi.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-27T01:25:25.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "Mercury.Test.WebApi\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\WeatherForecast.cs",
+              "RelativeToolTip": "Mercury.Test.WebApi\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T23:18:47.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\TestProject1\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "TestProject1\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\TestProject1\\UnitTest1.cs",
+              "RelativeToolTip": "TestProject1\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T23:18:44.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Mercury.Test.WebApi\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Mercury.Test.WebApi\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T22:51:52.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Program.cs",
               "RelativeDocumentMoniker": "Mercury.Test.WebApi\\Program.cs",
               "ToolTip": "C:\\Users\\Brian\\source\\repos\\TestDeployPipeline\\Mercury.Test.WebApi\\Mercury.Test.WebApi\\Program.cs",
               "RelativeToolTip": "Mercury.Test.WebApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-26T21:22:50.423Z",
               "EditorCaption": ""
