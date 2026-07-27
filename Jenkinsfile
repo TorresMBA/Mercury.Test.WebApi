@@ -41,7 +41,7 @@ pipeline {
         }
 		
 		stage('Deploy') {
-			setps{
+			steps{
 				bat '''
 				    %windir%\\System32\\inetsrv\\appcmd stop apppool /apppool.name:"MiApiPool"
 				
