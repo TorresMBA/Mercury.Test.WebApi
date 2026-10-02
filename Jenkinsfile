@@ -8,8 +8,8 @@ pipeline {
   }
 
   environment {
-    APP = 'mi-api'                    // nombre de imagen y contenedor: minúsculas y guiones
-    PROJECT = 'src/MiApi/MiApi.csproj' // proyecto web que se publica
+    APP = 'mercury-test-api'                    // nombre de imagen y contenedor: minúsculas y guiones
+    PROJECT = 'src/Mercury.Test.WebApi/Mercury.Test.WebApi.csproj' // proyecto web que se publica
     TAG = "${BUILD_NUMBER}"
   }
 
