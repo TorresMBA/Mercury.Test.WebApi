@@ -23,6 +23,16 @@ pipeline {
       
       stages {
         stage('Build, test y SonarQube') {
+          sh '''
+            echo "=== DOTNET INFO ==="
+            dotnet --info
+    
+            echo "=== DOTNET VERSION ==="
+            dotnet --version
+    
+            echo "=== MSBUILD VERSION ==="
+            dotnet msbuild -version
+          '''
           steps {
             withSonarQubeEnv('sonarqube') {
               // El escáner de .NET envuelve la compilación: begin -> build/test -> end
