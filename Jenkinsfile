@@ -1,55 +1,96 @@
 pipeline {
+  agent none
 
-    agent any
+  options {
+    timestamps()
+    disableConcurrentBuilds()
+    buildDiscarder(logRotator(numToKeepStr: '20'))
+  }
 
-    stages {
+  environment {
+    APP = 'mi-api'                    // nombre de imagen y contenedor: minúsculas y guiones
+    PROJECT = 'src/MiApi/MiApi.csproj' // proyecto web que se publica
+    TAG = "${BUILD_NUMBER}"
+  }
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/TorresMBA/Mercury.Test.WebApi.git'
+  stages {
+    stage('CI') {
+      agent { label 'dotnet' }
+      environment {
+        REGISTRY = credentials('registry')
+      }
+      stages {
+        stage('Build, test y SonarQube') {
+          steps {
+            withSonarQubeEnv('sonarqube') {
+              // El escáner de .NET envuelve la compilación: begin -> build/test -> end
+              sh '''
+                dotnet sonarscanner begin /k:"$APP" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.token="$SONAR_AUTH_TOKEN"
+                dotnet build -c Release
+                dotnet test -c Release --no-build
+                dotnet sonarscanner end /d:sonar.token="$SONAR_AUTH_TOKEN"
+              '''
             }
+          }
         }
 
-        stage('Restore') {
-            steps {
-                bat 'dotnet restore'
+        stage('Quality gate') {
+          steps {
+            timeout(time: 10, unit: 'MINUTES') {
+              waitForQualityGate abortPipeline: true
             }
+          }
         }
 
-        stage('Build') {
-            steps {
-                bat 'dotnet build'
-            }
+        stage('Seguridad') {
+          steps {
+            sh '''
+              mercury-ci semgrep
+              mercury-ci trivy-fs
+            '''
+          }
         }
 
-        stage('Test') {
-            steps {
-                bat 'dotnet test'
-            }
-        }
-		
-		stage('Publish') {
-            steps {
-                bat 'dotnet publish -c Release -o publish'
-            }
+        stage('Imagen') {
+          steps {
+            sh '''
+              dotnet publish "$PROJECT" -c Release -o publish
+              mercury-ci login
+              mercury-ci package dotnet publish "$APP" "$TAG"
+              mercury-ci trivy-image "$(mercury-ci image-ref "$APP" "$TAG")"
+            '''
+          }
         }
 
-        stage('Archive Artifacts') {
-            steps {
-                archiveArtifacts artifacts: 'publish/**'
-            }
+        stage('Deploy dev') {
+          steps {
+            sh 'mercury-ci deploy "$APP" dev "$TAG"'
+          }
         }
-		
-		stage('Deploy') {
-			steps{
-				bat '''
-				    %windir%\\System32\\inetsrv\\appcmd stop apppool /apppool.name:"MiApiPool"
-				
-				    xcopy publish C:\\inetpub\\wwwroot\\Deploy\\Mercury\\ /E /Y /I
-				
-				    %windir%\\System32\\inetsrv\\appcmd start apppool /apppool.name:"MiApiPool"
-				    '''
-			}
-		}
+      }
     }
+
+    // Sin agente: la espera no ocupa RAM ni un cupo de agente
+    stage('Aprobar prod') {
+      steps {
+        timeout(time: 1, unit: 'DAYS') {
+          input message: "¿Promover ${APP}:${TAG} a prod?"
+        }
+      }
+    }
+
+    stage('Deploy prod') {
+      agent { label 'base' }
+      environment {
+        REGISTRY = credentials('registry')
+      }
+      options { skipDefaultCheckout() }
+      steps {
+        sh '''
+          mercury-ci login
+          mercury-ci deploy "$APP" prod "$TAG"
+        '''
+      }
+    }
+  }
 }
