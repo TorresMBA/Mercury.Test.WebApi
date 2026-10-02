@@ -22,19 +22,19 @@ pipeline {
       }
       
       stages {
-        stage('Build, test y SonarQube') {
-          sh '''
-            echo "=== DOTNET INFO ==="
-            dotnet --info
-    
-            echo "=== DOTNET VERSION ==="
-            dotnet --version
-    
-            echo "=== MSBUILD VERSION ==="
-            dotnet msbuild -version
-          '''
+        stage('Build, test y SonarQube') {          
           steps {
             withSonarQubeEnv('sonarqube') {
+              sh '''
+                echo "=== DOTNET INFO ==="
+                dotnet --info
+        
+                echo "=== DOTNET VERSION ==="
+                dotnet --version
+        
+                echo "=== MSBUILD VERSION ==="
+                dotnet msbuild -version
+              '''
               // El escáner de .NET envuelve la compilación: begin -> build/test -> end
               sh '''
                 dotnet sonarscanner begin /k:"$APP" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.token="$SONAR_AUTH_TOKEN"
