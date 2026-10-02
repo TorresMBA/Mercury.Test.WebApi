@@ -9,6 +9,7 @@ pipeline {
 
   environment {
     APP = 'mercury-test-api'                    // nombre de imagen y contenedor: minúsculas y guiones
+    SOLUTION = 'Mercury.Test.WebApi.slnx'
     PROJECT = 'Mercury.Test.WebApi/Mercury.Test.WebApi.csproj' // proyecto web que se publica
     TAG = "${BUILD_NUMBER}"
   }
@@ -19,6 +20,7 @@ pipeline {
       environment {
         REGISTRY = credentials('registry')
       }
+      
       stages {
         stage('Build, test y SonarQube') {
           steps {
@@ -26,8 +28,9 @@ pipeline {
               // El escáner de .NET envuelve la compilación: begin -> build/test -> end
               sh '''
                 dotnet sonarscanner begin /k:"$APP" /d:sonar.host.url="$SONAR_HOST_URL" /d:sonar.token="$SONAR_AUTH_TOKEN"
-                dotnet build -c Release
-                dotnet test -c Release --no-build
+                dotnet restore "$SOLUTION"
+                dotnet build "$SOLUTION" -c Release --no-restore
+                dotnet test "$SOLUTION" -c Release --no-build
                 dotnet sonarscanner end /d:sonar.token="$SONAR_AUTH_TOKEN"
               '''
             }
