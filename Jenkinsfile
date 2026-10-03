@@ -67,6 +67,11 @@ pipeline {
         stage('Imagen') {
           steps {
             sh '''
+              which mercury-ci
+              grep -n "docker build\\|buildx build" "$(which mercury-ci)"
+              grep -n "DOTNET_VERSION" "$TEMPLATES/dotnet/Dockerfile" 2>/dev/null || true
+            '''
+            sh '''
               dotnet publish "$PROJECT" -c Release -o publish
               mercury-ci login
               mercury-ci package dotnet publish "$APP" "$TAG"
